@@ -133,7 +133,7 @@ BOOTSTRAP3 = {
     }
     
 #Heroku settings
-cwd - os.getcwd()
+cwd = os.getcwd()
 if cwd == '/app' or cwd[:4] == '/tmp':
     import dj_database_url
     DATABASES = {
