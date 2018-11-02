@@ -1,8 +1,13 @@
 from django.shortcuts import render
+#The render function renders the response based on the data provided by views.
 from django.http import HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 # Create your views here.
+
+"""A view function takes in information from a request, prepares the data
+needed to generate a page, and sends the data back to the browser, using 
+the template that defines what the page will look like."""
 
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm

@@ -27,6 +27,7 @@ DEBUG = True
 
 # Application definition
 
+#Tells Django which apps work together to make up the project
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

@@ -17,8 +17,13 @@ Including another URLconf
 from django.urls import path, include
 from django.contrib import admin
 
+"""A URL pattern describes the way the URL is laid out and tells Django what to
+look for when matching a browser request with a site URL."""
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls')),
-    path('', include('learning_logs.urls')),
+    path('users/', include('users.urls')), #For URLs in the User app
+    path('', include('learning_logs.urls')), #For all other URLs
     ]
+
+#The namespace argument allows us to distinguish between other URLs that may appear in the project
