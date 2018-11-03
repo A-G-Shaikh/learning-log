@@ -2,6 +2,7 @@
 {% load bootstrap3 %}
 
 {% block header %}
+  <!-- Show the topic and add a link back to the main page of the topic -->
   <h1><a href="{% url 'learning_logs:topic' topic.id %}">{{ Topic }}</a></h1>
 {% endblock header %}
 

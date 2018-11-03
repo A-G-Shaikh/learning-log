@@ -1,7 +1,13 @@
 {% extends "learning_logs/base.html" %}
+{% load bootstrap3 %}
 
 {% block header %}
   <h1>Topics</h1>
+  {% buttons %}  
+    <a href="{% url 'learning_logs:new_topic' %}">
+    <button name="submit" class="btn btn-success">Add new topic</button>
+    </a>
+  {% endbuttons %}
 {% endblock header %}
 
 {% block content %}
@@ -13,9 +19,15 @@
           <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
         </h3>
       </li>
-    {% empty %}
-      <li>No topics have been added yet.</li>
+    {% empty %} <!-- What to do if there are no items in the list -->
+      <li>No topics have been added yet. Add a new topic and get started !</li>
+    <!-- Every for loop in a template needs an explicit 'endfor' tag -->
     {% endfor % %}
   </ul>
-  <h3><a href="{% url 'learning_logs:new_topic' %}">->Add new topic: </a></h3>
+
+
+
+
 {% endblock content %}
+
+

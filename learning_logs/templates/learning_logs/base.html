@@ -13,8 +13,8 @@
     {% bootstrap_javascript %}
     
   </head>
-  
-  <body>
+  <!-- Base template for repeated elements on the web page -->
+  <body> <!-- Content that the users will see on the page -->
     <!-- Static navbar -->
     <nav style="background-color:#00BFFF" class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -24,6 +24,7 @@
             data-toggle="collapse" data-target="#navbar"
             aria-expanded="false" aria-controls="navbar">
           </button>
+          <!-- a=anchor tag for a link, href = hyper text reference -->
           <a class="navbar-brand" href="{% url 'learning_logs:index' %}">
             Learning Log</a>
         </div>
@@ -35,6 +36,7 @@
           
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}</ul>
+            <!-- Greeting for logged in users -->
               <li><a>Hello, {{user.username }}.</a></li>
               <li><a href="{% url 'users:logout' %}">Log out</a></li>
             {% else %}
@@ -50,6 +52,7 @@
     <div class="container">
       
       <div class="page-header">
+        <!-- placeholder, child tempate will define the info that goes here -->
         {% block header %}{% endblock header %}
       </div>
         {% block content %}{% endblock content %}

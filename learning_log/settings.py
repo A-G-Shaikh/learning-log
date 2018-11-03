@@ -124,7 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #My settings
-LOGIN_URL = '/users/login/'
+LOGIN_URL = '/users/login/' #Send the user to the login page if not logged in for authorised pages.
 
 #Settings for django-bootstrap3
 BOOTSTRAP3 = {

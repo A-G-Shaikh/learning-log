@@ -1,7 +1,7 @@
 """Defines url patterns for users."""
 
 from django.urls import path
-from django.contrib.auth.views import login
+from django.contrib.auth.views import login #Import the default login view.
 
 from . import views
 

@@ -20,6 +20,7 @@ urlpatterns = [
     path('edit_entry/<int:entry_id>/', views.edit_entry, name='edit_entry'),
     ]
 
+#int: - Captures a numerical value and stores it in the variable 'entry_id'.
 """Each URL maps to a particular view- the view function retrieves and processes
 the data needed for that page. It also calls a template, which builds a page that
 the browser can read. Using a namespace means we don't have to write out the whole URL"""

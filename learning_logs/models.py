@@ -16,7 +16,7 @@ class Topic(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     #Will automatically record the current date and time
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    
+    #So that every topic belongs to a certain user.
     def __str__(self):
         """Return a string representation of the model."""
         return self.text

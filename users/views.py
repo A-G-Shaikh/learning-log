@@ -10,23 +10,24 @@ def logout_view(request):
     """Logs the user out."""
     logout(request)
     return HttpResponseRedirect(reverse('learning_logs:index'))
+    #Redirect back to the homepage.
 
 def register(request):
     """Registers a new user."""
     if request.method != 'POST':
         #Display blank registration form.
-        form = UserCreationForm()
+        form = UserCreationForm() 
     else:
         #Process completed form.
         form = UserCreationForm(data=request.POST)
         
         if form.is_valid():
             new_user = form.save()
-            #Log the user in and then redirect to home page.
+            #Log the user in and then redirect to topics page.
             authenticated_user = authenticate(username=new_user.username,
                 password=request.POST['password1'])
             login(request, authenticated_user)
-            return HttpResponseRedirect(reverse('learning_logs:index'))
+            return HttpResponseRedirect(reverse('learning_logs:topics'))
             
     context = {'form': form}
     return render(request, 'users/register.html', context)
